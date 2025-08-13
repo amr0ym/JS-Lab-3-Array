@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)file:///C:/Users/omar/Desktop/index-START.html -->
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Legendary Array Scientists 💡</title>
+  <link rel="icon" href="https://fav.farm/%F0%9F%94%A5">
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+  // Array exercise - modified version
+  // Data to work with
+    const scientists = [
+      { fname: 'Albert', lname: 'Einstein', born: 1879, died: 1955 },
+      { fname: 'Isaac', lname: 'Newton', born: 1643, died: 1727 },
+      { fname: 'Galileo', lname: 'Galilei', born: 1564, died: 1642 },
+      { fname: 'Marie', lname: 'Curie', born: 1867, died: 1934 },
+      { fname: 'Johannes', lname: 'Kepler', born: 1571, died: 1630 },
+      { fname: 'Nicolaus', lname: 'Copernicus', born: 1473, died: 1543 },
+      { fname: 'Max', lname: 'Planck', born: 1858, died: 1947 },
+      { fname: 'Katherine', lname: 'Blodgett', born: 1898, died: 1979 },
+      { fname: 'Ada', lname: 'Lovelace', born: 1815, died: 1852 },
+      { fname: 'Sarah E.', lname: 'Goode', born: 1855, died: 1905 },
+      { fname: 'Lise', lname: 'Meitner', born: 1878, died: 1968 },
+      { fname: 'Hanna', lname: 'Hammarström', born: 1829, died: 1909 }
+    ];
+
+    const namesList = [
+      'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+      'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+      'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+      'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+      'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+    ];
+
+  // 1. Scientists born in the 16th century
+  const sixteenthCentury = scientists.filter(s => s.born >= 1500 && s.born < 1600);
+  console.log('Born in the 16th century:', sixteenthCentury);
+
+  // 2. Array of full names
+  const fullNames = scientists.map(({ fname, lname }) => `${fname} ${lname}`);
+  console.log('Full names:', fullNames);
+
+  // 3. Sort scientists by birth year, oldest to youngest
+  const byBirth = [...scientists].sort((a, b) => a.born - b.born);
+  console.log('Sorted by birth year:', byBirth);
+
+  // 4. Total years all scientists lived
+  const yearsSum = scientists.reduce((acc, curr) => acc + (curr.died - curr.born), 0);
+  console.log('Total years lived:', yearsSum);
+
+  // 5. Sort scientists by years lived
+  const byLifespan = [...scientists].sort((a, b) => (a.died - a.born) - (b.died - b.born));
+  console.log('Sorted by years lived:', byLifespan);
+
+    // 6. Sort names alphabetically by last name
+    const sortedNames = [...namesList].sort((x, y) => {
+      const [lastX] = x.split(', ');
+      const [lastY] = y.split(', ');
+      return lastX.localeCompare(lastY);
+    });
+    console.log('Sorted names:', sortedNames);
+    
+  </script>
+</body>
+</html>
